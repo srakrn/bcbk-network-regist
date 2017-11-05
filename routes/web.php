@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::get('/bootstrap', function () {
     return view('bootstrap_test');
 });
+
+Route::get('list', 'RegistrationController@list');
