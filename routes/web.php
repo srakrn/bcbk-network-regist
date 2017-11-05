@@ -20,3 +20,5 @@ Route::get('/bootstrap', function () {
 });
 
 Route::get('list', 'RegistrationController@list');
+Route::get('register', 'RegistrationController@register');
+Route::post('register', 'RegistrationController@saveRegister');
