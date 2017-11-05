@@ -16,5 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/bootstrap', function () {
-    return view('base');
+    return view('bootstrap_test');
 });

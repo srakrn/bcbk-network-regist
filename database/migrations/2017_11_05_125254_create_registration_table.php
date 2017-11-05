@@ -13,7 +13,7 @@ class CreateRegistrationTable extends Migration
      */
     public function up()
     {
-        Schema::create('registration', function (Blueprint $table) {
+        Schema::create('registrations', function (Blueprint $table) {
             $table->char('id', 13)->primary();
             $table->string('name');
             $table->string('login_id');
