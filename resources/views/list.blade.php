@@ -6,7 +6,7 @@ Listing
 
 @section('content')
 <h1>Listing</h1>
-<table class="table">
+<table class="table display" id="list_table">
   <thead>
     <tr>
       <td scope="col">Citizen ID</td>
@@ -28,4 +28,12 @@ Listing
 
 @section('sidebar')
 eiei
+@endsection
+
+@section('scripts')
+<script>
+$(document).ready( function () {
+    $('#list_table').DataTable();
+} );
+</script>
 @endsection
