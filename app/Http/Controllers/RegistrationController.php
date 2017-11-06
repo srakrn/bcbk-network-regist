@@ -8,6 +8,11 @@ use App\Registration;
 
 class RegistrationController extends Controller
 {
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
+
   public function list()
   {
     $registrations = Registration::all();
@@ -38,7 +43,7 @@ class RegistrationController extends Controller
 
     if ($validator->fails())
     {
-        return redirect('register')
+        return redirect('add')
           ->withErrors($validator)
           ->withInput();
     }

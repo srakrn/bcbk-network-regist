@@ -13,10 +13,17 @@
 
 Route::get('/', 'RegistrationController@list');
 Route::get('/list', 'RegistrationController@list');
-Route::get('/register', 'RegistrationController@register');
-Route::post('/register', 'RegistrationController@saveRegister');
-Route::get('/thisroute', 'RegistrationController@thisRoute');
+Route::get('/add', 'RegistrationController@register');
+Route::post('/add', 'RegistrationController@saveRegister');
 
-Auth::routes();
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('registerrrrr', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('registerrrrr', 'Auth\RegisterController@register');
+
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset');

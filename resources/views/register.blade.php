@@ -23,7 +23,7 @@ Listing
   </div>
 @endisset
 
-<form method="POST" action="/register">
+<form method="POST" action="/add">
   {{ csrf_field() }}
   <div class="form-group">
     <label for="exampleInputEmail1">Citizen ID</label>
