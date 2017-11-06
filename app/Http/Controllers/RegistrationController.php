@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use Illuminate\Http\Request;
 use App\Registration;
 
@@ -21,11 +22,28 @@ class RegistrationController extends Controller
 
   public function saveRegister()
   {
-    $registration = new Registration;
-    $registration->id = request('id');
-    $registration->name = request('name');
-    $registration->login_id = request('login_id');
-    $registration->save();
-    return view('register');
+    $validator = Validator::make(request()->all(), [
+        'id' => 'required|unique:registrations|size:1',
+        'name' => 'required',
+        'login_id' => 'required',
+    ]);
+
+    if ($validator->fails())
+    {
+        return redirect('register')
+          ->withErrors($validator)
+          ->withInput();
+    }
+    else
+    {
+      $registration = new Registration;
+      $registration->id = request('id');
+      $registration->name = request('name');
+      $registration->login_id = request('login_id');
+      $registration->save();
+      return view('register')
+        ->with('status', 'success')
+        ->with('registration', $registration);
+    }
   }
 }

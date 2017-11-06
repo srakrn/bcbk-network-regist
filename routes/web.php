@@ -11,14 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/bootstrap', function () {
-    return view('bootstrap_test');
-});
-
-Route::get('list', 'RegistrationController@list');
-Route::get('register', 'RegistrationController@register');
-Route::post('register', 'RegistrationController@saveRegister');
+Route::get('/', 'RegistrationController@list');
+Route::get('/list', 'RegistrationController@list');
+Route::get('/register', 'RegistrationController@register');
+Route::post('/register', 'RegistrationController@saveRegister');
+Route::get('/login', 'AuthController@login');
