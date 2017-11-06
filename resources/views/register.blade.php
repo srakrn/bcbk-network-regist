@@ -1,14 +1,7 @@
-@extends('layouts.sidebar')
+@extends('layouts.2_col')
 
 @section('title')
 Listing
-@endsection
-
-@section('sidebar')
-<div class="list-group">
-  <a href="/" class="list-group-item list-group-item-action">View registration list</a>
-  <a href="/register" class="list-group-item list-group-item-action">Add new registration</a>
-</div>
 @endsection
 
 @section('content')

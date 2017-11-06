@@ -15,4 +15,8 @@ Route::get('/', 'RegistrationController@list');
 Route::get('/list', 'RegistrationController@list');
 Route::get('/register', 'RegistrationController@register');
 Route::post('/register', 'RegistrationController@saveRegister');
-Route::get('/login', 'AuthController@login');
+Route::get('/thisroute', 'RegistrationController@thisRoute');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

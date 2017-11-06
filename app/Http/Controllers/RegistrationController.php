@@ -23,10 +23,18 @@ class RegistrationController extends Controller
   public function saveRegister()
   {
     $validator = Validator::make(request()->all(), [
-        'id' => 'required|unique:registrations|size:1',
+        'id' => 'required|unique:registrations|size:13',
         'name' => 'required',
-        'login_id' => 'required',
+        'login_id' => 'required|unique:registrations',
     ]);
+
+    $attributeNames = array(
+       'id' => 'citizen ID',
+       'name' => 'name',
+       'login_id' => 'Internet username'
+    );
+
+    $validator->setAttributeNames($attributeNames);
 
     if ($validator->fails())
     {
@@ -45,5 +53,10 @@ class RegistrationController extends Controller
         ->with('status', 'success')
         ->with('registration', $registration);
     }
+  }
+
+  public function thisRoute()
+  {
+    return \Request::route()->getName();
   }
 }
