@@ -29,6 +29,8 @@ Listing
       <td>{{ $registration['id'] }}</td>
       <td>{{ $registration['name'] }}</td>
       <td>{{ $registration['login_id'] }}</td>
+      <td><i class="material-icons">view_headline</i></td>
+      <td><i class="material-icons">delete</i></td>
     </tr>
   @endforeach
   </tbody>
