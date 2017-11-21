@@ -64,4 +64,11 @@ class RegistrationController extends Controller
   {
     return \Request::route()->getName();
   }
+
+  public function viewRegister($id)
+  {
+    $registration = \App\Registration::findOrFail($id);
+    return view('view')
+      ->with('registration', $registration);
+  }
 }

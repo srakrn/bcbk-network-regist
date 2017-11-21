@@ -12,16 +12,14 @@
 */
 
 Route::get('/', 'RegistrationController@list');
-Route::get('/list', 'RegistrationController@list');
+Route::get('/view', 'RegistrationController@list');
 Route::get('/add', 'RegistrationController@register');
 Route::post('/add', 'RegistrationController@saveRegister');
+Route::get('/view/{id}', 'RegistrationController@viewRegister');
 
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
-
-Route::get('registerrrrr', 'Auth\RegisterController@showRegistrationForm')->name('register');
-Route::post('registerrrrr', 'Auth\RegisterController@register');
 
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
