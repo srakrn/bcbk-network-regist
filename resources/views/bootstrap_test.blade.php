@@ -9,5 +9,4 @@ Test
 @endsection
 
 @section('sidebar')
-eiei
 @endsections

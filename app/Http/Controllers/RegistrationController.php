@@ -25,7 +25,7 @@ class RegistrationController extends Controller
     return view('register');
   }
 
-  public function saveRegister()
+  public function save()
   {
     $validator = Validator::make(request()->all(), [
         'id' => 'required|unique:registrations|size:13',
@@ -60,15 +60,20 @@ class RegistrationController extends Controller
     }
   }
 
-  public function thisRoute()
-  {
-    return \Request::route()->getName();
-  }
-
-  public function viewRegister($id)
+  public function view($id)
   {
     $registration = \App\Registration::findOrFail($id);
     return view('view')
       ->with('registration', $registration);
+  }
+
+  public function delete($id)
+  {
+    $registration = \App\Registration::findOrFail($id);
+    $name = $registration['name'];
+    $registration -> delete();
+    $status = 'delete_success';
+    $registrations = Registration::all();
+    return redirect('/')->with(compact(['status', 'name']));
   }
 }

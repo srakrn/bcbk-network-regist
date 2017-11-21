@@ -11,11 +11,3 @@ Listing
 <h2>Assigned KUWIN Login</h2>
 <p>{{ $registration['login_id'] }}</p>
 @endsection
-
-@section('scripts')
-<script>
-$(document).ready( function () {
-    $('#list_table').DataTable();
-} );
-</script>
-@endsection

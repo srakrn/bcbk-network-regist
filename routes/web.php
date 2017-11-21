@@ -12,10 +12,10 @@
 */
 
 Route::get('/', 'RegistrationController@list');
-Route::get('/view', 'RegistrationController@list');
 Route::get('/add', 'RegistrationController@register');
-Route::post('/add', 'RegistrationController@saveRegister');
-Route::get('/view/{id}', 'RegistrationController@viewRegister');
+Route::post('/add', 'RegistrationController@save');
+Route::get('/registration/{id}', 'RegistrationController@view');
+Route::get('/registration/{id}/delete', 'RegistrationController@delete');
 
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
