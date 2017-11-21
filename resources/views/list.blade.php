@@ -18,7 +18,7 @@ Listing
     <tr>
       <td scope="col">Citizen ID</td>
       <td scope="col">Name</td>
-      <td scope="col">Registered username</td>
+      <td scope="col">Username</td>
       <td scope="col">View</td>
       <td scope="col">Delete</td>
     </tr>
@@ -28,9 +28,9 @@ Listing
     <tr>
       <td>{{ $registration['id'] }}</td>
       <td>{{ $registration['name'] }}</td>
-      <td>{{ $registration['login_id'] }}</td>
-      <td><i class="material-icons">view_headline</i></td>
-      <td><i class="material-icons">delete</i></td>
+      <td>ku{{ $registration['login_id'] }}</td>
+      <td><a href="registration/{{ $registration['id'] }}"><i class="material-icons">view_headline</i></a></td>
+      <td><a href="registration/{{ $registration['id'] }}/delete"><i class="material-icons">delete</i></a></td>
     </tr>
   @endforeach
   </tbody>
