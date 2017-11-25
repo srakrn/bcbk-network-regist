@@ -29,14 +29,15 @@ class RegistrationController extends Controller
   {
     $validator = Validator::make(request()->all(), [
         'id' => 'required|unique:registrations|size:13',
-        'name' => 'required',
         'login_id' => 'required|unique:registrations',
+        'name' => 'required',
     ]);
 
     $attributeNames = array(
        'id' => 'citizen ID',
        'name' => 'name',
-       'login_id' => 'Internet username'
+       'login_id' => 'internet username',
+       'phone' => 'phone number'
     );
 
     $validator->setAttributeNames($attributeNames);

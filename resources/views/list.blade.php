@@ -28,7 +28,7 @@ Listing
     <tr>
       <td>{{ $registration['id'] }}</td>
       <td>{{ $registration['name'] }}</td>
-      <td>ku{{ $registration['login_id'] }}</td>
+      <td>{{ $registration['login_id'] }}</td>
       <td><a href="registration/{{ $registration['id'] }}"><i class="material-icons">view_headline</i></a></td>
       <td><a href="registration/{{ $registration['id'] }}/delete"><i class="material-icons">delete</i></a></td>
     </tr>
